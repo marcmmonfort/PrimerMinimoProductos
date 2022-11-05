@@ -6,15 +6,15 @@ public class Order {
 
     // ATRIBUTOS.
 
-    String userID;
+    String userId;
     LinkedList<LP> elements;
 
     // ----------------------------------------------------------------------------------------------------
 
     // CONSTRUCTOR.
     public Order(String s) {
-        this.userID = s;
-        this.elements = new LinkedList<LP>();
+        this.userId = s;
+        this.elements = new LinkedList<>(); // ESTO.
     }
 
     // ----------------------------------------------------------------------------------------------------
@@ -26,12 +26,12 @@ public class Order {
 
     // GETTERS Y SETTERS.
 
-    public String getUserID() {
-        return userID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public LinkedList<LP> getElements() {
@@ -45,12 +45,13 @@ public class Order {
     // ----------------------------------------------------------------------------------------------------
 
     public void addLP(int i, String b001) {
+        this.elements.add(new LP(i, b001)); // ESTO.
     }
 
     // ----------------------------------------------------------------------------------------------------
 
-    public Object getLP(int i) {
-        return null;
+    public LP getLP(int i) {
+        return this.elements.get(i); // ESTO.
     }
 
     // ----------------------------------------------------------------------------------------------------

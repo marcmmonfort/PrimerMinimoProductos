@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.LinkedList; // ESTO.
+
 public class User {
 
     // ----------------------------------------------------------------------------------------------------
@@ -7,6 +10,7 @@ public class User {
     String userID;
     String userName;
     String userSurname;
+    List <Order> processedOrders;
 
     // ----------------------------------------------------------------------------------------------------
 
@@ -16,6 +20,7 @@ public class User {
         this.userID = s;
         this.userName = name;
         this.userSurname = surname;
+        this.processedOrders = new LinkedList<>(); // ESTO.
     }
 
     // ----------------------------------------------------------------------------------------------------
@@ -50,6 +55,14 @@ public class User {
 
     public void setUserSurname(String userSurname) {
         this.userSurname = userSurname;
+    }
+
+    public List<Order> getProcessedOrders() {
+        return processedOrders;
+    }
+
+    public void setProcessedOrders(List<Order> processedOrders) {
+        this.processedOrders = processedOrders;
     }
 
     // ----------------------------------------------------------------------------------------------------

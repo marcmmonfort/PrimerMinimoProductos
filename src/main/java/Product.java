@@ -4,17 +4,20 @@ public class Product {
 
     // ATRIBUTOS.
 
-    String productID;
-    String productName;
-    Double productPrice;
+    String productId;
+    String description;
+    Double price;
+    int numSales;
 
     // ----------------------------------------------------------------------------------------------------
 
     // CONSTRUCTOR.
-    public Product(String prodID, String prodName, Double prodPrice){
-        this.productID = prodID;
-        this.productName = prodName;
-        this.productPrice = prodPrice;
+
+    public Product(String productID, String description, Double price) {
+        this.productId = productID;
+        this.description = description;
+        this.price = price;
+        this.numSales = 0;
     }
 
     // ----------------------------------------------------------------------------------------------------
@@ -27,45 +30,38 @@ public class Product {
 
     // GETTERS Y SETTERS.
 
-    public String getProductID() {
-        return productID;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductID(String productID) {
-        this.productID = productID;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Double getProductPrice() {
-        return productPrice;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setProductPrice(Double productPrice) {
-        this.productPrice = productPrice;
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public int getNumSales() {
+        return numSales;
+    }
+
+    public void setNumSales(int numSales) {
+        this.numSales = numSales;
     }
 
     // ----------------------------------------------------------------------------------------------------
 
-    public String getProductId() {
-        return null;
-    }
-
-    public double getPrice() {
-        return 0;
-    }
-
-    public String getDescription() {
-        return null;
-    }
-
-    public int getNumSales() {
-        return 0;
-    }
 }

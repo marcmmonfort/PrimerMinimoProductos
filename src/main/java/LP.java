@@ -1,11 +1,11 @@
-dpublic class LP {
+public class LP {
 
     // ----------------------------------------------------------------------------------------------------
 
     // ATRIBUTOS.
 
     int quantity;
-    String Product;
+    String product;
 
     // ----------------------------------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ dpublic class LP {
 
     public LP(int quantity, String product) {
         this.quantity = quantity;
-        Product = product;
+        this.product = product;
     }
 
     // ----------------------------------------------------------------------------------------------------
@@ -35,11 +35,11 @@ dpublic class LP {
     }
 
     public String getProduct() {
-        return Product;
+        return product;
     }
 
     public void setProduct(String product) {
-        Product = product;
+        this.product = product;
     }
 
     // ----------------------------------------------------------------------------------------------------

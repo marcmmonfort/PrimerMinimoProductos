@@ -42,7 +42,6 @@ public class ProductManagerImplTest {
         o3.addLP(3, "B001");
         o3.addLP(2, "A002");
 
-
         Assert.assertEquals(0, this.pm.numOrders());
         this.pm.addOrder(o1);
         Assert.assertEquals(1, this.pm.numOrders());
@@ -64,7 +63,6 @@ public class ProductManagerImplTest {
         this.pm.addOrder(o4);
 
         Assert.assertEquals(4, this.pm.numOrders());
-
     }
 
     @Test
