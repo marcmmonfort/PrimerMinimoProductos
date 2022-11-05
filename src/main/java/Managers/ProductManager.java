@@ -1,3 +1,12 @@
+// CARPETA A LA QUE PERTENECE.
+package Managers;
+
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+import Entities.*;
+import Main.*;
+import Managers.*;
+import Services.*;
+
 import java.util.List;
 
 public interface ProductManager {
@@ -52,4 +61,9 @@ public interface ProductManager {
 
     // ----------------------------------------------------------------------------------------------------
 
+    // EXTRAS API REST.
+
+    public int size();
+
+    // ----------------------------------------------------------------------------------------------------
 }

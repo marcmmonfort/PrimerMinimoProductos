@@ -1,3 +1,12 @@
+// CARPETA A LA QUE PERTENECE.
+package Main;
+
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+import Entities.*;
+import Main.*;
+import Managers.*;
+import Services.*;
+
 import io.swagger.jaxrs.config.BeanConfig;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;

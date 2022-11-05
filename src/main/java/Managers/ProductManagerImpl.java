@@ -1,4 +1,14 @@
+// CARPETA A LA QUE PERTENECE.
+package Managers;
+
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+import Entities.*;
+import Main.*;
+import Managers.*;
+import Services.*;
+
 import java.util.*;
+import org.apache.log4j.Logger;
 
 public class ProductManagerImpl implements ProductManager{
 
@@ -9,6 +19,25 @@ public class ProductManagerImpl implements ProductManager{
     List<Product> products;
     Queue<Order> orders;
     HashMap<String,User> users;
+
+    // ----------------------------------------------------------------------------------------------------
+
+    // EXTRAS API REST.
+
+    private static ProductManager instance; // Creamos la interfaz de product manager.
+
+    final static Logger logger = Logger.getLogger(ProductManagerImpl.class);
+
+    public static ProductManager getInstance(){ // Si no existe, creamos una implementación (fachada).
+        if (instance==null) instance = new ProductManagerImpl();
+        return instance;
+    }
+
+    public int size(){
+        int ret = this.products.size();
+        logger.info("size " + ret);
+        return ret;
+    }
 
     // ----------------------------------------------------------------------------------------------------
 
@@ -40,7 +69,7 @@ public class ProductManagerImpl implements ProductManager{
     @Override
     public void addProduct(String productId, String name, double price) {
         Product p = new Product(productId, name, price);
-        products.add(p);
+        this.products.add(p); // HERE.
     }
 
     // > Function 4.
@@ -58,7 +87,7 @@ public class ProductManagerImpl implements ProductManager{
     // > Function 5.
     @Override
     public int numProducts() {
-        return products.size();
+        return this.products.size(); // HERE.
     }
 
     // ----------------------------------------------------------------------------------------------------
@@ -75,21 +104,21 @@ public class ProductManagerImpl implements ProductManager{
     @Override
     public Order processOrder() {
         Order ord = orders.poll(); // Treiem una ordre de la cua.
-        this.users.get(ord.getUserId()).processedOrders.add(ord); // Añadimos la órden al usuario que la hace.
-        for (int i=0; i<ord.elements.size(); i++){ // Recorremos todos los elementos/productos de la órden.
+        this.users.get(ord.getUserId()).getProcessedOrders().add(ord); // Añadimos la órden al usuario que la hace.
+        for (int i=0; i<ord.getElements().size(); i++){ // Recorremos todos los elementos/productos de la órden.
             for (int j=0; j<this.products.size(); j++){
-                if (Objects.equals(this.products.get(j).getProductId(), ord.elements.get(i).getProduct())){
-                    this.products.get(j).setNumSales(this.products.get(j).getNumSales() + ord.elements.get(i).getQuantity());
+                if (Objects.equals(this.products.get(j).getProductId(), ord.getElements().get(i).getProduct())){
+                    this.products.get(j).setNumSales(this.products.get(j).getNumSales() + ord.getElements().get(i).getQuantity());
                 }
             }
         }
-        return ord; // Por si se quiere usar.
+        return ord;
     }
 
     // > Function 8.
     @Override
     public List<Order> ordersByUser(String userId) {
-        return users.get(userId).getProcessedOrders();
+        return this.users.get(userId).getProcessedOrders(); // HERE.
     }
 
     // > Function 9.

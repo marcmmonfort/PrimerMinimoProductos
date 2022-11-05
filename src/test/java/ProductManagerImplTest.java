@@ -1,8 +1,13 @@
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+import Entities.*;
+import Main.*;
+import Managers.*;
+import Services.*;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.List;
 
 public class ProductManagerImplTest {

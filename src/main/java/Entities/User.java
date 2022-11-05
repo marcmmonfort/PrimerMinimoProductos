@@ -1,3 +1,8 @@
+// CARPETA A LA QUE PERTENECE.
+package Entities;
+
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+
 import java.util.List;
 import java.util.LinkedList; // ESTO.
 
@@ -7,7 +12,7 @@ public class User {
 
     // ATRIBUTOS.
 
-    String userID;
+    String userId;
     String userName;
     String userSurname;
     List <Order> processedOrders;
@@ -17,7 +22,7 @@ public class User {
     // CONSTRUCTOR.
 
     public User(String s, String name, String surname){
-        this.userID = s;
+        this.userId = s;
         this.userName = name;
         this.userSurname = surname;
         this.processedOrders = new LinkedList<>(); // ESTO.
@@ -33,12 +38,12 @@ public class User {
 
     // GETTERS Y SETTERS.
 
-    public String getUserID() {
-        return userID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {

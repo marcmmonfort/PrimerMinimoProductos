@@ -1,3 +1,12 @@
+// CARPETA A LA QUE PERTENECE.
+package Entities;
+
+// IMPORTACIÓN DE CLASES E INSTANCIAS DE OTRAS CARPETAS.
+import Entities.*;
+import Main.*;
+import Managers.*;
+import Services.*;
+
 import java.util.LinkedList;
 
 public class Order {
