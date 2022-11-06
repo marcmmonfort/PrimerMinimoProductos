@@ -25,7 +25,7 @@ public class Main {
      */
 
     public static HttpServer startServer() {
-        final ResourceConfig rc = new ResourceConfig().packages("edu.upc.dsa.minim.UI.services");
+        final ResourceConfig rc = new ResourceConfig().packages("Services");
 
         rc.register(io.swagger.jaxrs.listing.ApiListingResource.class);
         rc.register(io.swagger.jaxrs.listing.SwaggerSerializers.class);
@@ -37,7 +37,7 @@ public class Main {
         beanConfig.setContact("support@example.com");
         beanConfig.setDescription("REST API for Product Manager");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
-        beanConfig.setResourcePackage("edu.upc.dsa.minim.UI.services");
+        beanConfig.setResourcePackage("Services");
         beanConfig.setTermsOfServiceUrl("http://www.example.com/resources/eula");
         beanConfig.setTitle("REST API");
         beanConfig.setVersion("1.0.0");

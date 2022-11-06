@@ -107,7 +107,7 @@ public class ProductService {
             @ApiResponse(code = 404, message = "Order not found")
     })
     @Path("/order")
-    public Response processOrder(Order order) {
+    public Response processOrder() {
         Order ordProc = this.tm.processOrder();
         if (ordProc == null) {
             return Response.status(404).build();
